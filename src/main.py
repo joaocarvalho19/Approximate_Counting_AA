@@ -12,7 +12,7 @@ if __name__ == "__main__":
     try:
         file = sys.argv[1]
     except Exception as err:
-        print("Usage: python3 texts/<file>")
+        print("Usage: python3 src/main.py texts/<file>")
         sys.exit(2)
 
     # Exact Counter
@@ -30,6 +30,7 @@ if __name__ == "__main__":
     d_chars = dc.run()
     #dc.printResults(chars)
 
+    # Results
     for c in e_chars:
         if c in f_chars:
             if c in d_chars:
