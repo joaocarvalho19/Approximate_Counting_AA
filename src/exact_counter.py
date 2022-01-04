@@ -2,14 +2,16 @@ class ExactCounter:
     def __init__(self, file):
         self.file = file
         self.number_chars = 0
+    
+    def getTextLen(self):
+        return self.number_chars
 
     def run(self):
-        file = open(self.file, "r")
-        file = file.read()
 
         letters = {}
-        for char in file:
-            if char.isascii():
+        for char in self.file:
+            if char.isalpha():
+                char = char.upper()
                 self.number_chars += 1
                 if char not in letters.keys():
                     letters[char] = 1
